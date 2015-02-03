@@ -10,13 +10,16 @@ def bradysRevenge(bro):
 
 def get_at_content(dna):
 	length = len(dna)
-	a_count = dna.count('A')
-	t_count = dna.count('T')
+	#fix lower case problem by converting the sequence to upper case
+	a_count = dna.upper().count('A')
+	t_count = dna.upper().count('T')
 	at_content = (a_count + t_count) / length
-	return at_content
+	#use round() to limit the number of significant figures in the result
+	return round(at_content, 2)
 
 
 my_at_content = get_at_content("ATGCGCGATCGATCGAATCG")
 print(str(my_at_content))
 print(get_at_content("ATGCGCGATCGATCGAATCG"))
 print(get_at_content("aactgtagctagctacgagcgta"))
+
