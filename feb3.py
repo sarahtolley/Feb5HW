@@ -8,18 +8,19 @@ def bradysRevenge(bro):
     bigbro = bro.upper()
     print "You mad, " + bigbro + "?"
 
-def get_at_content(dna):
+#add sig_figs to variable list 
+def get_at_content(dna, sig_figs):
 	length = len(dna)
 	#fix lower case problem by converting the sequence to upper case
 	a_count = dna.upper().count('A')
 	t_count = dna.upper().count('T')
 	at_content = (a_count + t_count) / length
 	#use round() to limit the number of significant figures in the result
-	return round(at_content, 2)
+	return round(at_content, sig_figs)
 
 
-my_at_content = get_at_content("ATGCGCGATCGATCGAATCG")
+my_at_content = get_at_content("ATGCGCGATCGATCGAATCG", 1)
 print(str(my_at_content))
-print(get_at_content("ATGCGCGATCGATCGAATCG"))
-print(get_at_content("aactgtagctagctacgagcgta"))
+print(get_at_content("ATGCGCGATCGATCGAATCG", 2))
+print(get_at_content("aactgtagctagctacgagcgta", 3))
 
