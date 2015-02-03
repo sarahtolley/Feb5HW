@@ -10,6 +10,8 @@ def bradysRevenge(bro):
 
 #add sig_figs to variable list 
 def get_at_content(dna, sig_figs):
+	#remove any "N"'s from sequence
+	dena = dna.replace('N','')
 	length = len(dna)
 	#fix lower case problem by converting the sequence to upper case
 	a_count = dna.upper().count('A')
